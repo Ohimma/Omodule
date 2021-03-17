@@ -4,7 +4,8 @@
             <h2>{{ item.name }}</h2>
 
             <div class="modules">
-                <navpage  v-for="(itemChild,indexChild) in item.child" :key="indexChild" :meta="itemChild">
+                <navpage  v-for="(itemChild,indexChild) in item.child" :key="indexChild" 
+                        :meta="itemChild" >
                 </navpage>
             </div>
         </div>
@@ -22,9 +23,9 @@ export default {
                {
                 name: "模块",
                 child: [
-                    {title: "登录页", herf: "http://www.baidu.com", describe: "xxxxxxxxxx"},
-                    {title: "布局页", herf: "http://www.google.com", describe: "ccccccccccc"},
-                    {title: "错误页", herf: "http://www.google.com", describe: "bbbb"},
+                    {title: "登录页", herf: "#login", describe: "xxxxxxxxxx"},
+                    {title: "布局页", herf: "#layout", describe: "ccccccccccc"},
+                    {title: "错误页", herf: "#error", describe: "bbbb"},
                 ]},
                 {
                 name: "系统",
@@ -36,6 +37,7 @@ export default {
             ]
        }
     },
+   
 }
 </script>
 

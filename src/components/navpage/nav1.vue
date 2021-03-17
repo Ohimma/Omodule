@@ -1,10 +1,9 @@
 <template>
     <div class="nav">
         <header class="header"> 
-            <!-- <h4>{{ meta.title}} </h4> -->
             <span>{{ meta.describe }}</span>
         </header>
-        <footer class="footer">
+        <footer class="footer" >
             <span><a :href="meta.herf">{{ meta.title}}</a></span>
         </footer>
     </div>    
@@ -13,6 +12,12 @@
 <script>
 export default {
     props: ["meta"],
+    methods: {
+        handleJump: function (path) {
+            console.log("enter handJump path =", path, this.$router)
+            this.$router.push(path)
+        },
+    },
 }
 
 </script>
