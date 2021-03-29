@@ -5,6 +5,7 @@
         </div> -->
         <div class="content">
             <div class="nav01"> <nav01></nav01> </div>
+            <div class="nav02">  </div>
         </div>
     </div>
 </template>
@@ -44,7 +45,9 @@ export default {
     box-shadow: 0 0 20px 5px #cccccc;;
 }
 
-
+.nav02 {
+    background-color: lightblue;
+}
 /* .navall .content>div:hover {
     width: 95%;
     height: 95%;
