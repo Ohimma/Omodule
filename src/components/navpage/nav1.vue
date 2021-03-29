@@ -1,7 +1,7 @@
 <template>
     <div class="nav">
         <header class="header"> 
-            <span>{{ meta.describe }}</span>
+            <span>{{ meta.describea }}</span>
         </header>
         <footer class="footer" >
             <span><a :href="meta.herf">{{ meta.title}}</a></span>

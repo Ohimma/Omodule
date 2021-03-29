@@ -1,10 +1,9 @@
 <template>
-  <div class="login01">
+  <div class="login02">
     <div class="login-msg">
       <div class="title">
-        <!-- <img src="../assets/img/login-logo.png" alt=""> -->
-        <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F8851510617%2F640.jpg&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1618458458&t=5bdab2e5e4d75abf5595723d479ca382" alt="">
-        <span>管理后台</span>
+        <img src="../../assets/img/login/login02_logo.png" alt="">
+        <span>登录页面翻版</span>
       </div>
       <!-- 
         :model指定表单使用的数据 :rules进行表单校验规则 ref是提交的对象名字
@@ -15,9 +14,9 @@
         status-icon 添加校验结果反馈显示图标
       -->
       <el-form :model="loginData" :rules="loginDataRules" ref="loginForm">
-        <el-form-item prop="name">
+        <el-form-item prop="account">
           <el-input type="text" 
-            v-model="loginData.name" 
+            v-model="loginData.account" 
             prefix-icon="el-icon-user" 
             placeholder="请输入用户名"
             tabindex="1"
@@ -36,13 +35,13 @@
             auto-complete="on">
           </el-input>
         </el-form-item>
-
         <!-- @keyup.enter="loginBtn" -->
+        <!-- @click.prevent="loginBtn" -->
         <el-form-item>
           <el-button 
             type="primary"
             :loading="loading" 
-            >登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</el-button>
+            >登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -54,40 +53,38 @@ export default {
   data () {
     return {
       loginData: {
-        name: '',
+        account: '',
         password: ''
       },
       loginDataRules: {
         account: [{required: true, message: '请输入用户名', trigger: 'change'}],
+        password: [{required: true, message: '请输入密码', trigger: 'change'}]
       },
       loading: false,
     }
   },
-  
+ 
 }
 </script>
 
 <style scoped>
-.login01  {
+.login02 {
   height: 100%;
   width: 100%;
-  background: #090d09 url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.yyxt.com%2Fuploads%2Fallimg%2F160318%2F11-16031Q11350.jpg&refer=http%3A%2F%2Fwww.yyxt.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1618457703&t=6d3f1fd89769961b75784d049e106d73') 
-              no-repeat right bottom;
-  background-size: 90% 100%;
-  transition: all 1s;
 
-  position: relative;
+  background-size: 100%;
+  overflow: hidden;
+  background: #11255A url('../../assets/img/login/login02.png') no-repeat center bottom;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.login01  .login-msg {
-    position: absolute;
-    left: 10%;
-    top: 50%;
+.login02 .login-msg {
     width: 27%;
-    margin: -100px 0 0 0;
 }
-
-.login01  .login-msg .title {
+.login02 .login-msg .title {
     width: 100%;
     height: 25%;
 
@@ -95,16 +92,17 @@ export default {
     justify-content: center;
     align-items: center;
 
-    margin-bottom: 20px;
+    margin-bottom: 5%;
 }
-.login01  .login-msg .title img {
-    width: 50px;
-    height: 30px;
+.login02 .login-msg .title img {
+    width: 40px;
+    height: 40px;
 }
-.login01  .login-msg .title span {
+.login02 .login-msg .title span {
   font-size: 20px;
-  line-height: 40px;
+  line-height: 50px;
   color: #FFFFFF;
+  margin: 0px 10px;
 }
 
 .el-button {
@@ -124,11 +122,10 @@ export default {
   background: #4d73da;
 } 
 
-
 </style>
 
 <style >
-.login01  .el-form .el-input__inner {
+.login02  .el-form .el-input__inner {
   background-color: transparent;
   border: 0;
   border-bottom: 1px solid #fff;

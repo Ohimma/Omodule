@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router' 
 
+import login from "./modules/login.js"
 
 let routes = [
   {
@@ -8,15 +9,16 @@ let routes = [
   },
   {
     path: '/home',
-    name: 'Home',
     component: () => import('@/views/home'),
-    meta: { title: '首页', icon: 'home', requiresAuth: false},
   },
   {
     path: '/login',
-    name: 'Login',
     component: () => import('@/views/login'),
-    meta: { title: '登录', icon: 'login', requiresAuth: false},
+    children: login.routers,
+  },
+  {
+    path: '/nav',
+    component: () => import('@/views/navpage'),
   },
 ]
 
