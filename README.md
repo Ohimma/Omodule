@@ -10,10 +10,14 @@
 
 ## 二：项目说明
 ```
-目的：日常代码记录
-
-技术：
 vue3 + element-plus 
+
+git clone https://github.com/Ohimma/Omodule.git
+git remote add github git@github.com:Ohimma/Omodule.git
+git remote add gitee  git@gitee.com:ohimma/omodule.git
+cd Omodule
+npm install
+npm run serve
 ```
 
 ## 三：部分页面展示
